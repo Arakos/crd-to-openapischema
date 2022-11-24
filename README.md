@@ -1,6 +1,6 @@
 # Kubernetes CRD to OpenAPISchema
 
-This project is a CLI that will convert a `kind: CustomResourceDefinition` to an OpenAPISchema JSON file that's compatible with [kubeval](https://kubeval.instrumenta.dev/).
+This project is a CLI that will convert `kind: CustomResourceDefinition`s to a JSON Schema file that's now compatible to use with [kubeconform](https://github.com/yannh/kubeconform) to check your CRs.
 
 ## Motivation
 
@@ -11,3 +11,4 @@ As part of the Replicated vendor tools, we want to help ensure that valid YAML i
 ```
 crd-to-openapischema <url or path to schema>
 ```
+

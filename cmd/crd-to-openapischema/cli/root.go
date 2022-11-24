@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/replicatedhq/crd-to-openapischema/pkg/schema"
+	"github.com/arakos/crd-to-openapischema/pkg/generator"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -23,7 +23,8 @@ func RootCmd() *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 			v := viper.GetViper()
 
-			return schema.Generate(args[0], v.GetString("output-dir"))
+			_, err := generator.Generate(args[0], v.GetString("output-dir"))
+			return err
 		},
 	}
 
